@@ -10,11 +10,19 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: AppBar(
-        title: const Text("Hello World"),
-        backgroundColor: Colors.white,
-        titleTextStyle: TextStyle(
-          color: Colors.black
+      title: "Home Page",
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Hello World"),
+        ),
+        body: Center(
+          child: Text(
+            "Love & Peace",
+            style: TextStyle(
+              fontSize: 25.0,
+              color: Colors.pinkAccent
+            ),
+          ),
         ),
       ),
     );
