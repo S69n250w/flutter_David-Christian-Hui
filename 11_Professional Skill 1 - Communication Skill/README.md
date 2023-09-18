@@ -1,0 +1,4 @@
+1. Komunikasi efektif di tempat kerja adalah proses pertukaran infromasi, baik verbal maupun non-verbal dalam sebuah organisasi (perusahaan) dengan tujuan menyampaikan, menerima, dan memahami sebuah pesan dengan baik.
+2. Komunikasi efektif itu penting karena: - Meningkatkan produktivitas karyawan  - Meningkatkan kepuasan karyawan  - Mengurangi tingkat pergantian karyawan / "turnover"
+3. The Lasswell's 5W: - Who  - (says) What  - (In Which) Channel  - (to) Whom  - (With What) Effects
+4. 7C dalam Komunikasi Efektif: - Conciseness (Keringkasan)  - Completeness (Kelengkapan)  - Consideration (Pertimbangan)  - Correctness (Ketepatan)  - Clarity (Kejelasan)  - Concretness (Konkret)  - Courtesy (Sopan-Santun)
