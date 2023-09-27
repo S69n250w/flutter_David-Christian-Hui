@@ -1,0 +1,3 @@
+1. Aplikasi Task Management, untuk menambahkan dan menghapus kegiatan
+2. AlertDialog: - Untuk tampilan android, dari material design  - Menginformasikan pengguna tentang situasi tertenu  - Bisa digunakan untuk mendapatkan input dari user  - Membutuhkan helper method showDialog
+3. BottomSheet: - Seperti dialog tetapi muncul dari bawah layar aplikasi  - Menggunakan fungsi bawaan flutter showModalBottomSheet  - Membutuhkan 2 properti, yaitu context dan builder
