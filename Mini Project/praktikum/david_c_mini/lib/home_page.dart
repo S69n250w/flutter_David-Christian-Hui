@@ -16,14 +16,16 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("Daily Fresh"),
         centerTitle: true,
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (_) => const MenuPage()));
-          },
-          child: Text("Go to Menu Page")
-        ),
-      ),
+      // body: GridView(gridDelegate: gridDelegate),
+
+      // body: Center(
+      //   child: ElevatedButton(
+      //     onPressed: () {
+      //     Navigator.of(context).push(MaterialPageRoute(builder: (_) => const MenuPage()));
+      //     },
+      //     child: Text("Go to Menu Page")
+      //   ),
+      // ),
     );
   }
 }
