@@ -14,7 +14,14 @@ class _MyHomePageState extends State<MyHomePage> {
     final Color selectedColor = Colors.tealAccent;
     final Color unselectedColor = Colors.grey;
 
-    final List<String> imagePaths = [
+    final List<String> horizontalImagePaths = [
+      'assets/ayam_asam_manis.jpg',
+      'assets/ayam_kemangi.jpg',
+      'assets/ayam_lada_hitam.jpg',
+      'assets/ayam_obat.jpg'
+    ];
+
+    final List<String> verticalImagePaths = [
       'assets/ayam_asam_manis.jpg',
       'assets/ayam_kemangi.jpg',
       'assets/ayam_lada_hitam.jpg',
@@ -28,26 +35,56 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("Daily Fresh"),
         centerTitle: true,
       ),
-      body: ListView.builder(
-        itemCount: imagePaths.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Row(
-            children: [
-              Container(
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
+      body: Column(
+        children: [
+          Container(
+            height: 150,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: horizontalImagePaths.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (_) => const MenuPage()));
+                      },
+                      child: Image(
+                        width: 139,
+                        image: AssetImage(horizontalImagePaths[index]),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+          // SizedBox(height: 10),
+          
+          Column(
+            children: verticalImagePaths.map((imagePath) {
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
                         MaterialPageRoute(builder: (_) => const MenuPage()));
-                  },
-                  child: Image(
+                    },
+                    child: Image(
                       width: 139,
-                      image: AssetImage(imagePaths[index]),
+                      image: AssetImage(imagePath),
+                    ),
                   ),
                 ),
-              )
-            ],
-          );
-        },
+              );
+            }).toList(),
+          ),
+        ],
+      ),
+
         // children: [
           // Row(
           //   children: [
@@ -66,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
           //   ],
           // )
         // ],
-      ),
+      // ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.grey[850],
         selectedItemColor: selectedColor,
