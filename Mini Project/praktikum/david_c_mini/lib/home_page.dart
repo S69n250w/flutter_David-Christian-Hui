@@ -1,5 +1,6 @@
 import 'package:david_c_mini/menu_page.dart';
 import 'package:flutter/material.dart';
+// import 'package:path_provider/path_provider.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -35,7 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("Daily Fresh"),
         centerTitle: true,
       ),
-      body: Column(
+      body: ListView(
+        scrollDirection: Axis.vertical,
         children: [
           Container(
             height: 150,
@@ -52,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           MaterialPageRoute(builder: (_) => const MenuPage()));
                       },
                       child: Image(
-                        width: 139,
+                        width: 100,
                         image: AssetImage(horizontalImagePaths[index]),
                       ),
                     ),
@@ -61,26 +63,28 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
           ),
-          // SizedBox(height: 10),
+          // SizedBox(height: 20),
           
-          Column(
-            children: verticalImagePaths.map((imagePath) {
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (_) => const MenuPage()));
-                    },
-                    child: Image(
-                      width: 139,
-                      image: AssetImage(imagePath),
+          Expanded(
+            child: ListView(
+              children: verticalImagePaths.map((imagePath) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (_) => const MenuPage()));
+                      },
+                      child: Image(
+                        width: 100,
+                        image: AssetImage(imagePath),
+                      ),
                     ),
                   ),
-                ),
-              );
-            }).toList(),
+                );
+              }).toList(),
+            ),
           ),
         ],
       ),

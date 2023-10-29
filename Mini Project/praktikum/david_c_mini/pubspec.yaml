@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  path_provider: ^2.1.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -66,6 +67,31 @@ flutter:
     - 'assets/ayam_obat.jpg'
     - 'assets/ayam_tumis_jamur_kuping.jpg'
     - 'assets/brokoli_saus_jamur.jpg'
+    - 'assets/brokoli_tumis_jagung.jpg'
+    - 'assets/buncis_teri.jpg'
+    - 'assets/chicken_katsu_kari_jepang.jpg'
+    - 'assets/dadar_sosis.jpg'
+    - 'assets/daging_ayam_bumbu_sate_kacang.jpg'
+    - 'assets/ikan_jahe.jpg'
+    - 'assets/ikan_kakap_sambalado.jpg'
+    - 'assets/ikan_lidah_goreng.jpg'
+    - 'assets/kacang_panjang_tumis_udang.jpg'
+    - 'assets/kangkung_belacan.jpg'
+    - 'assets/kepah_saus_padang.jpg'
+    - 'assets/korean_chicken_honey_spicy.jpg'
+    - 'assets/pecel.jpg'
+    - 'assets/perkedel_jagung.jpg'
+    - 'assets/perkedel_kentang.jpg'
+    - 'assets/peyek_udang.jpg'
+    - 'assets/rendang_ayam.jpg'
+    - 'assets/sambal_teri_pete.jpg'
+    - 'assets/sayur_lodeh.jpg'
+    - 'assets/soto.jpg'
+    - 'assets/soto.jpg'
+    - 'assets/tauco_tahu_gulung.jpg'
+    - 'assets/tauco_tahu_udang.jpg'
+    - 'assets/tomyam_ikan_kakap.jpg'
+    - 'assets/udang_saus_tiram.jpg'
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
