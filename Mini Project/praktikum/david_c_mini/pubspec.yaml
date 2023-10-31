@@ -30,8 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  path_provider: ^2.1.1
-
+  dio: ^5.3.3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -62,6 +61,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - 'assets/ayam_asam_manis.jpg'
+    - 'assets/ayam_kecap.jpg'
     - 'assets/ayam_kemangi.jpg'
     - 'assets/ayam_lada_hitam.jpg'
     - 'assets/ayam_obat.jpg'
@@ -72,6 +72,8 @@ flutter:
     - 'assets/chicken_katsu_kari_jepang.jpg'
     - 'assets/dadar_sosis.jpg'
     - 'assets/daging_ayam_bumbu_sate_kacang.jpg'
+    - 'assets/ikan_asam_manis.jpg'
+    - 'assets/ikan_goreng_nestum.jpg'
     - 'assets/ikan_jahe.jpg'
     - 'assets/ikan_kakap_sambalado.jpg'
     - 'assets/ikan_lidah_goreng.jpg'
@@ -79,18 +81,24 @@ flutter:
     - 'assets/kangkung_belacan.jpg'
     - 'assets/kepah_saus_padang.jpg'
     - 'assets/korean_chicken_honey_spicy.jpg'
+    - 'assets/mata_sapi_jahe.jpg'
     - 'assets/pecel.jpg'
     - 'assets/perkedel_jagung.jpg'
     - 'assets/perkedel_kentang.jpg'
     - 'assets/peyek_udang.jpg'
+    - 'assets/pokcoy_saus_tiram.jpg'
     - 'assets/rendang_ayam.jpg'
+    - 'assets/sambal_teri_kacang.jpg'
     - 'assets/sambal_teri_pete.jpg'
     - 'assets/sayur_lodeh.jpg'
+    - 'assets/sosis_asam_manis.jpg'
     - 'assets/soto.jpg'
-    - 'assets/soto.jpg'
+    - 'assets/soun_tumis_sayur_kol.jpg'
     - 'assets/tauco_tahu_gulung.jpg'
     - 'assets/tauco_tahu_udang.jpg'
     - 'assets/tomyam_ikan_kakap.jpg'
+    - 'assets/tumis_gambas.jpg'
+    - 'assets/tumis_pokcoy.jpg'
     - 'assets/udang_saus_tiram.jpg'
 
   # An image asset can refer to one or more resolution-specific "variants", see

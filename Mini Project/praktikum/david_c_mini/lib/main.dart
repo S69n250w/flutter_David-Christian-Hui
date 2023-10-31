@@ -1,8 +1,16 @@
-import 'package:david_c_mini/home_page.dart';
+import 'package:david_c_mini/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(
+      debugShowCheckedModeBanner: false,
+    // Route default aplikasi (biasanya halaman beranda)
+    home: LoginPage(),
+    // Definisikan rute tambahan
+    routes: {
+      '/login': (context) => LoginPage(),
+    },
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -13,7 +21,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: MyHomePage(),
+      home: LoginPage(),
     );
   }
 }
