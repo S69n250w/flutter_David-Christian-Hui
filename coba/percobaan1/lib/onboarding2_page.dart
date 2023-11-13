@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnBoardingPage2(),
+      home: OnBoarding2Page(),
     ));
 
-class OnBoardingPage2 extends StatefulWidget {
-  const OnBoardingPage2({super.key});
+class OnBoarding2Page extends StatefulWidget {
+  const OnBoarding2Page({super.key});
 
   @override
-  _OnBoardingPage2State createState() => _OnBoardingPage2State();
+  _OnBoarding2PageState createState() => _OnBoarding2PageState();
 }
 
-class _OnBoardingPage2State extends State<OnBoardingPage2> {
+class _OnBoarding2PageState extends State<OnBoarding2Page> {
   @override
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => OnBoardingPage2(),
+        builder: (context) => OnBoarding2Page(),
       ));
     });
   }
@@ -31,12 +31,6 @@ class _OnBoardingPage2State extends State<OnBoardingPage2> {
           image: DecorationImage(
             image: AssetImage("assets/onboarding_page.png"),
             fit: BoxFit.cover,
-          ),
-        ),
-        child: Center(
-          child: Text(
-            "Isi Konten Halaman",
-            style: TextStyle(color: Colors.white, fontSize: 24.0),
           ),
         ),
       ),
