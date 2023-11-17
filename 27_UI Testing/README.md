@@ -1,0 +1,6 @@
+1. UI Testing adalah pengujian yang dilakukan pada tampilan suatu aplikasi untuk memastikan aplikasi dapat menerima interaksi dan memberi respon kepada pengguna
+2. UI Testing di Flutter disebut juga widget testing sehingga pengujian dilakukan pada widgets dengan menuliskan script yang dapat dijalankan secara otomatis.
+3. Keuntungan: - Memastikan seluruh widget memberi tampilan yang sesuai  - Memastikan seluruh interaksi dapat diterima dengan baik  - Menjadi ketentuan yang harus diikuti saat diperlukan perubahan pada widget
+4. Output Build: - File / berkas hasil keluaran dari project flutter  - Digunakan untuk merilis aplikasi ke App Store  - Terdiri dari format APK atau AAB untuk Android dsn IPA untuk iOS
+5. Build APK: - Hanya dapat berjalan di Android  - Memiliki format .apk  - Dapat di install langsung pada perangkat Android
+6. Build IPA: - Hasil Output hanya dapat berjalan di iOS  - Memiliki format .ipa  - Perlu mendaftar akun Apple Developer Program  - Perintah build hanya dapat dijalankan pada perangkat Apple
