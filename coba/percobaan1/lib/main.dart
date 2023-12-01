@@ -58,64 +58,6 @@ class _OnBoarding2PageState extends State<OnBoarding2Page> {
               ),
             ),
           ),
-          // ShaderMask(
-          //   shaderCallback: (Rect bounds) {
-          //     return LinearGradient(
-          //       colors: [Colors.black.withOpacity(0.8), Colors.transparent],
-          //       stops: [0.5, 0.3],
-          //       begin: Alignment.bottomCenter,
-          //       end: Alignment.topCenter,
-          //     ).createShader(bounds);
-          //   },
-          //   blendMode: BlendMode.srcOver,
-          //   child: Container(
-          //     decoration: BoxDecoration(
-          //       image: DecorationImage(
-          //         image: AssetImage('assets/images/onboarding_page.png'),
-          //         fit: BoxFit.cover
-          //       ),
-          //     ),
-          //   ),
-          // ),
-          // Background Image with BlendMode
-          // Container(
-          //   decoration: BoxDecoration(
-          //     image: DecorationImage(
-          //       image: AssetImage('assets/images/onboarding_page.png'),
-          //       fit: BoxFit.cover,
-          //       // colorFilter: ColorFilter.mode(
-          //       //   Colors.transparent,
-          //       //   BlendMode.srcOver
-          //       // ),
-          //     ),
-          //   ),
-          // ),
-          // ShaderMask for Top Gradient Overlay
-          // ShaderMask(
-          //   shaderCallback: (Rect bounds) {
-          //     return LinearGradient(
-          //       colors: [Colors.transparent, Colors.black.withOpacity(0.7)],
-          //       stops: [0.0, 1.0],
-          //       begin: Alignment.topCenter,
-          //       end: Alignment.bottomCenter,
-          //     ).createShader(bounds);
-          //   },
-          //   blendMode: BlendMode.srcOver,
-          //   child: Container(),
-          // ),
-          // ShaderMask for Bottom Gradient Overlay
-          // ShaderMask(
-          //   shaderCallback: (Rect bounds) {
-          //     return LinearGradient(
-          //       colors: [ Colors.transparent, Colors.black.withOpacity(0.7)],
-          //       stops: [0.0, 1.0],
-          //       begin: Alignment.topCenter,
-          //       end: Alignment.bottomCenter,
-          //     ).createShader(bounds);
-          //   },
-          //   blendMode: BlendMode.srcOver,
-          //   child: Container(),
-          // ),
           Container(
             child: Image(
               image: AssetImage('assets/images/logo/alta_resto_logo.png')
