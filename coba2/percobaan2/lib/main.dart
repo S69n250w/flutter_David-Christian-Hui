@@ -81,36 +81,42 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           ),
           // Padding for TextField and email
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 30.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextField(
                     controller: _emailController,
                     decoration: InputDecoration(
-                      labelText: 'Email'
+                      labelText: 'Email',
+                      labelStyle: TextStyle(
+                        fontFamily: GoogleFonts.poppins().fontFamily,
+                        color: Color(0xFF868686),
+                        fontSize: 18,
+                      )
                     ),
                   ),
                 SizedBox(height: 20),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 120),
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                    ),
-                    onPressed: () {
-                      // Logika untuk mengirim email reset password
-                      // (Anda dapat menambahkan logika pengiriman email di sini)
-                      _sendResetEmail();
-                    },
+                ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(colorPrimary4),
+                  ),
+                  onPressed: () {
+                    // Logika untuk mengirim email reset password
+                    // (Anda dapat menambahkan logika pengiriman email di sini)
+                    _sendResetEmail();
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 12),
                     child: Text(
                       "Reset Password",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: GoogleFonts.poppins().fontFamily,
                         fontSize: 15,
-                        fontWeight: FontWeight.bold
+                        fontWeight: FontWeight.bold,
                       ),
-                    )
+                    ),
                   ),
                 ),
               ],
