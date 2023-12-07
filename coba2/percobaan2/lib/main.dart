@@ -93,10 +93,10 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                         fontFamily: GoogleFonts.poppins().fontFamily,
                         color: Color(0xFF868686),
                         fontSize: 18,
-                      )
+                      ),
                     ),
                   ),
-                SizedBox(height: 20),
+                SizedBox(height: 80),
                 ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(colorPrimary4),
