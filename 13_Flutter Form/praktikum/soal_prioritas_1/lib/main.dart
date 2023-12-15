@@ -67,57 +67,82 @@ class _ContactsPageState extends State<ContactsPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Align(
-                    alignment: Alignment.center,
-                    child: Column(
-                      children: [
-                        Icon(
-                          Icons.mobile_friendly,
-                          color: Colors.grey,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Name',
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                      SizedBox(height: 5),
+                  // Align(
+                  //   alignment: Alignment.center,
+                  //   child: Column(
+                  //     children: [
+                  //       Icon(
+                  //         Icons.mobile_friendly,
+                  //         color: Colors.grey,
+                  //       ),
+                  //       SizedBox(height: 15),
+                  //       Title(
+                  //         color: Colors.black,
+                  //         child: Text(
+                  //           "Create New Contacts",
+                  //           style: TextStyle(
+                  //             fontSize: 20,
+                  //             fontWeight: FontWeight.w500
+                  //           ),
+                  //         )
+                  //       )
+                  //     ],
+                  //   ),
+                  // ),
+                  // SizedBox(height: 20),
+                      TextFormField(
+                        // controller: _nameController,
+                        decoration: InputDecoration(
+                          hintText: 'Enter Your Name',
+                          // labelText: 'Name',
+                          fillColor: Colors.purple[50],
+                          filled: true,
+                          labelStyle: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            color: Colors.green
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey)
+                          ),
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.blue)
+                          ),
                         ),
-                        SizedBox(height: 15),
-                        Title(
-                          color: Colors.black,
-                          child: Text(
-                            "Create New Contacts",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500
-                            ),
-                          )
-                        )
-                      ],
-                    ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter some text';
+                          }
+                          return null;
+                        },
+                        // onChanged: (value) {
+                        //   setState(() {
+                        //     _name= value;
+                        //   });
+                        // },
+                      ),
+                    ],
                   ),
-                  SizedBox(height: 20),
-                  TextFormField(
-                    controller: _nameController,
-                    decoration: InputDecoration(
-                      labelText: 'Name',
-                      fillColor: Colors.purple,
-                      filled: true
-                      // focusedBorder: OutlineInputBorder(
-                      //   borderSide: BorderSide(
-                      //     color: Colors.purple
-                      //   ),
-                      // ),
-                      // enabledBorder: OutlineInputBorder(
-                      //   borderSide: BorderSide(
-                      //     color: Colors.blue
-                      //   ),
-                      // ),
-                    ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter some text';
-                      }
-                      return null;
-                    },
-                  ),
+                    // validator: (value) {
+                    //   if (value == null || value.isEmpty) {
+                    //     return 'Please enter some text';
+                    //   }
+                    //   return null;
+                    // },
                   SizedBox(height: 10),
                   TextFormField(
                     controller: _phoneController,
-                    decoration: InputDecoration(labelText: 'Phone Number'),
+                    decoration: InputDecoration(
+                      // labelText: 'Phone Number',
+                      hintText: '+62 ...'
+                    ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter some text';
@@ -178,5 +203,19 @@ class _ContactsPageState extends State<ContactsPage> {
         ),
       ),
     );
+
+
+    //                             ],
+    //           ),
+    //             ],
+    //           ),
+    //         ),
+    //         ),
+    //       // ],
+    //       // );
+    //       ],
+    //     ),
+    //   ),
+    // );
   }
 }
