@@ -81,11 +81,10 @@ class _ContactsPageState extends State<ContactsPage> {
                           child: Text(
                             "Create New Contacts",
                             style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500
-                            ),
-                          )
-                        )
+                              fontSize: 20, fontWeight: FontWeight.w500),
+                        )),
+                        SizedBox(height: 20),
+                        ContactsListWidget(contacts: contacts),
                       ],
                     ),
                   ),
@@ -111,13 +110,10 @@ class _ContactsPageState extends State<ContactsPage> {
                   TextFormField(
                     controller: _phoneController,
                     decoration: InputDecoration(
-                      labelText: 'Phone Number',
-                      fillColor: Colors.purple[50],
-                      filled: true,
-                      labelStyle: TextStyle(
-                        fontWeight: FontWeight.w500
-                      )
-                    ),
+                        labelText: 'Phone Number',
+                        fillColor: Colors.purple[50],
+                        filled: true,
+                        labelStyle: TextStyle(fontWeight: FontWeight.w500)),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter some text';
@@ -132,11 +128,18 @@ class _ContactsPageState extends State<ContactsPage> {
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           // Tambahkan dari formulir ke dalam daftar kontak
-                          contacts.add({'title': _nameController.text,'subtitle': _phoneController.text});
-                  
+                          contacts.add({
+                            'title': _nameController.text,
+                            'subtitle': _phoneController.text
+                          });
+
                           // Tampilkan data kontak di console
                           print(contacts);
-                  
+
+                          setState(() {
+                            contacts;
+                          });
+
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text(
@@ -146,12 +149,10 @@ class _ContactsPageState extends State<ContactsPage> {
                         }
                       },
                       style: ElevatedButton.styleFrom(
-                        fixedSize: Size(120, 45),
-                        backgroundColor: Colors.deepPurple,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(35)
-                        )
-                      ),
+                          fixedSize: Size(120, 45),
+                          backgroundColor: Colors.deepPurple,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(35))),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(vertical: 15.0),
                         child: Row(
@@ -159,9 +160,7 @@ class _ContactsPageState extends State<ContactsPage> {
                           children: [
                             Text(
                               'Submit',
-                              style: TextStyle(
-                                fontSize: 15
-                              ),
+                              style: TextStyle(fontSize: 15),
                             ),
                           ],
                         ),
@@ -174,6 +173,69 @@ class _ContactsPageState extends State<ContactsPage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class ContactsListWidget extends StatelessWidget {
+  final List<Map<String, String>> contacts;
+
+  ContactsListWidget({required this.contacts});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(height: 20),
+        Title(
+          color: Colors.black,
+          child: Text(
+            'List Contacts',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+        SizedBox(height: 10),
+        // ListView untuk menampilkan daftar kontak
+        ListView.builder(
+          shrinkWrap: true,
+          itemCount: contacts.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.purple[100],
+                child: Text(
+                  contacts[index]['title']![0].toUpperCase(),
+                  style: TextStyle(
+                    color: Colors.black
+                  ),
+                ),
+              ),
+              title: Text(contacts[index]['title']!.toUpperCase()),
+              subtitle: Text(contacts[index]['subtitle']!),
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      print('Edit: ${contacts[index]['title']}');
+                    }, 
+                    icon: Icon(Icons.mode_edit_outlined)
+                  ),
+                  IconButton(onPressed: () {
+                    print('Delete: ${contacts[index]['title']}');
+                  },
+                  icon: Icon(Icons.delete_outline_outlined)
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+      ],
     );
   }
 }
