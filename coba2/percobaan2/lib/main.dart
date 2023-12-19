@@ -80,47 +80,60 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
             ),
           ),
           // Padding for TextField and email
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 30.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextField(
-                    controller: _emailController,
-                    decoration: InputDecoration(
-                      labelText: 'Email',
-                      labelStyle: TextStyle(
-                        fontFamily: GoogleFonts.poppins().fontFamily,
-                        color: Color(0xFF868686),
-                        fontSize: 18,
+          ListView(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 220.0),
+            children: [
+              Form(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Align(
+                      alignment: Alignment.center,
+                      child: TextFormField(
+                        controller: _emailController,
+                        decoration: InputDecoration(
+                          labelText: 'Email',
+                          labelStyle: TextStyle(
+                            fontFamily: GoogleFonts.poppins().fontFamily,
+                            color: Color(0xFF868686),
+                            fontSize: 18,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                SizedBox(height: 80),
-                ElevatedButton(
-                  style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(colorPrimary4),
-                  ),
-                  onPressed: () {
-                    // Logika untuk mengirim email reset password
-                    // (Anda dapat menambahkan logika pengiriman email di sini)
-                    _sendResetEmail();
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 12),
-                    child: Text(
-                      "Reset Password",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: GoogleFonts.poppins().fontFamily,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
+                    SizedBox(height: 80),
+                    ElevatedButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(colorPrimary4),
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                        ),
+                      ),
+                      onPressed: () {
+                        // Logika untuk mengirim email reset password
+                        // (Anda dapat menambahkan logika pengiriman email di sini)
+
+                        _sendResetEmail();
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 85, vertical: 14),
+                        child: Text(
+                          "Reset Password",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontFamily: GoogleFonts.poppins().fontFamily,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),
@@ -132,6 +145,6 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
     // (Anda dapat menambahkan logika pengiriman email di sini)
     String email = _emailController.text;
     // TODO: Kirim email reset password ke alamat email yang diberikan
-    print("Mengirim email reset password ke $email");
+    print("Mengirim email password ke $email");
   }
 }
