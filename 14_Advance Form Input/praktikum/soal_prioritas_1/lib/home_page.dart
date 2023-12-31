@@ -1,68 +1,6 @@
-// import 'dart:ffi';
-
-// import 'package:flutter/material.dart';
-
-// class MyHomePage extends StatefulWidget {
-//   const MyHomePage({super.key});
-
-//   @override
-//   State<MyHomePage> createState() => _MyHomePageState();
-// }
-
-// class _MyHomePageState extends State<MyHomePage> {
-//   final _selectedDate = DateTime.now();
-
-//   Future<void> _selectedDate(BuildContext context) async {
-//     final DateTime? picked = await showDatePicker(
-//       context: context,
-//       initialDate: _selectedDate,
-//       firstDate: DateTime(2000),
-//       lastDate: DateTime(2101)
-//     );
-
-//     if (picked != null && picked != _selectedDate) {
-//       setState(() {
-//         _selectedDate = picked;
-//       });
-//     }
-//   }
-  
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       home: Scaffold(
-//         appBar: AppBar(
-//           title: Text("Interactive Widgets"),
-//         ),
-//         body: Center(
-//           child: Column(
-//             mainAxisSize: MainAxisSize.min,
-//             children: <Widget>[
-//               Text(
-//                 "${_selectedDate.toLocal()}".split(' ')[0],
-//                 style: TextStyle(fontSize: 20),
-//               ),
-//               SizedBox(
-//                 height: 20.0,
-//               ),
-//               ElevatedButton(
-//                 onPressed: () => _selectDate(context),
-//                 child: Text('Select date')
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-// void main() => runApp(MaterialApp(home: DatePickerExample()));
-
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:intl/intl.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -72,9 +10,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var now = DateTime.now();
-  var formatter = DateFormat('yyyy-MM-dd');
-  String formattedDate = formatter.format(now);
   late DateTime selectedDate;
   late Color selectedColor;
   late Color newColor;
@@ -109,45 +44,68 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text("Interactive Widgets"),
         ),
-        body: Padding(
+        body: /*Padding(
           padding: const EdgeInsets.all(20.0),
-          child: Column(
+          child:*/ Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Select Date: "),
-//               InkWell(
-//   onTap: () {
-//     // Aksi yang dijalankan ketika di-tap
-//     print('Tapped!');
-//   },
-//   splashColor: Colors.blue, // Warna gelombang saat di-tap
-//   highlightColor: Colors.red, // Warna highlight saat di-tap
-//   child: Container(
-//     padding: EdgeInsets.all(16.0),
-//     child: Text('Tap Me'),
-//   ),
-// )
+              Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text('Date'),
+            TextButton(
+              onPressed: () async {
+                // final selectDate = await showDatePicker(
+                //   context: context,
+                //   initialDate: selectedDate,
+                //   firstDate: DateTime(1990),
+                //   lastDate: DateTime(selectedDate.year + 5),
+                // );
 
+                setState(() {
+                  if(selectDate != null) {
+                    selectedDate = selectDate;
+                  }
+                });
+              },
+              child: const Text('Select'),
+            ),
+          ],
+        ),
+        Text(DateFormat('dd-MM-yyyy').format(selectedDate)),
+
+              Row(
+                children: [
+                  Text("Date: "),
+                ],
+              ),
               InkWell(
                 onTap: () => _selectDate(context),
                 child: Container(
-                  padding: EdgeInsets.all(10.0),
-                  decoration: BoxDecoration(
-                    border: Border.all(),
-                    borderRadius: BorderRadius.circular(5.0),
-                  ),
+                  padding: EdgeInsets.only(top: 5, bottom: 5),
+                  // decoration: BoxDecoration(
+                  //   border: Border.all(),
+                  //   borderRadius: BorderRadius.circular(5.0),
+                  // ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        '${selectedDate.toLocal()}'.split(' ')[0],
+                        DateFormat('dd-MM-yyyy').format(selectedDate),
+                        // '${selectedDate.toLocal()}'.split(' ')[0],
                         style: TextStyle(fontSize: 16),
                       ),
-                      Icon(Icons.calendar_today)
+                      Text(
+                        "Select",
+                        style: TextStyle(
+                          color: Colors.blue
+                        ),
+                      ),
                     ],
                   ),
                 ),
               ),
+              Text(DateFormat('dd-MM-yyyy').format(selectedDate)),
               SizedBox(
                 height: 20
               ),
@@ -201,41 +159,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-        ),
+        // ),
       ),
     );
   }
 }
-
-
-// class RippleEffectExample extends StatefulWidget {
-//   @override
-//   _RippleEffectExampleState createState() => _RippleEffectExampleState();
-// }
-
-// class _RippleEffectExampleState extends State<RippleEffectExample> {
-//   double containerSize = 100.0;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return InkWell(
-//       onTap: () {
-//         // Aksi yang dijalankan ketika di-tap
-//         print('Tapped!');
-//         // Mengubah ukuran Container saat di-tap
-//         setState(() {
-//           containerSize = 120.0;
-//         });
-//       },
-//       child: AnimatedContainer(
-//         duration: Duration(milliseconds: 300),
-//         width: containerSize,
-//         height: containerSize,
-//         color: Colors.blue,
-//         child: Center(
-//           child: Text('Tap Me'),
-//         ),
-//       ),
-//     );
-//   }
-// }
